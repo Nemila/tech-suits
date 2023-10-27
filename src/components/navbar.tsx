@@ -5,7 +5,7 @@ type Props = {};
 
 const Navbar = (props: Props) => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 p-0 sticky top-0 left-0 w-full shadow-sm z-50">
       <div className="navbar max-w-7xl mx-auto">
         <div className="navbar-start">
           <a className="btn btn-ghost normal-case text-xl">TechSuits</a>

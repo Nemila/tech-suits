@@ -29,9 +29,9 @@ export default function RootLayout({
       <body
         className={`${poppins.className} flex w-full min-h-screen flex-col`}
       >
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );

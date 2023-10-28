@@ -1,0 +1,52 @@
+{
+  "title": "TechSuits",
+  "navigation": [
+    {
+      "id": 0,
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "id": 1,
+      "label": "About Us",
+      "href": "/about-us"
+    },
+    {
+      "id": 2,
+      "label": "Contact",
+      "href": "/contact"
+    },
+    {
+      "id": 3,
+      "label": "FAQ",
+      "href": "/faq"
+    }
+  ],
+
+  "categories": [
+    {
+      "slug": "womens-fashion",
+      "label": "Women's Fashion"
+    },
+    {
+      "slug": "mens-fashion",
+      "label": "Men's Fashion"
+    },
+    {
+      "slug": "phones-and-tech",
+      "label": "Phones & Techs"
+    },
+    {
+      "slug": "computers-and-security",
+      "label": "Computers & Security"
+    },
+    {
+      "slug": "consumer-electronics",
+      "label": "Consumer Electronics"
+    },
+    {
+      "slug": "jewelry-and-watches",
+      "label": "Jewelry & Watches"
+    }
+  ]
+}

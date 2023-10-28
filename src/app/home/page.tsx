@@ -1,72 +1,25 @@
+"use client";
 import BannerSlider from "@/components/banner-slider";
-import Footer from "@/components/footer";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FaCheck,
-  FaEye,
-  FaHeart,
-  FaListUl,
-  FaShoppingBag,
-  FaSync,
-} from "react-icons/fa";
-import Header from "../layouts/header";
+import { FaCheck, FaEye, FaHeart, FaShoppingBag, FaSync } from "react-icons/fa";
+import Categories from "../layouts/categories";
 
 const Page = () => {
   return (
-    <main className="">
+    <main className="py-6">
       <section className="container">
-        <div className="grid grid-cols-12 gap-8">
-          <aside className="p-4 col-span-3 bg-white rounded-md shadow-md">
-            <h4 className="flex items-center gap-2 font-medium">
-              <FaListUl />
-              Categories
-            </h4>
-
-            <hr className="my-4" />
-
-            <ul className="menu p-0 gap-2">
-              <li>
-                <Link href="/" className="w-full">
-                  Women&apos;s Fashion
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="w-full">
-                  Men&apos;s Fashion
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="w-full">
-                  Phones & Techs
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="w-full">
-                  Computers, Office & Security
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="w-full">
-                  Consumer Electronics
-                </Link>
-              </li>
-              <li>
-                <Link href="/" className="w-full">
-                  Jewelry and watches
-                </Link>
-              </li>
-            </ul>
-          </aside>
+        <div className="grid grid-cols-12 items-start gap-8">
+          <Categories />
 
           <section className="col-span-7">
             <BannerSlider />
           </section>
 
           <article className="col-span-2">
-            <div className="w-full h-full rounded-md bg-gradient-to-tr from-blue-600 to-cyan-500 text-white p-4 flex flex-col gap-3">
+            <div className="flex h-full w-full flex-col gap-3 rounded-md bg-gradient-to-tr from-blue-600 to-cyan-500 p-4 text-white">
               <div className="flex flex-col gap-2">
-                <h3 className="font-semibold text-xl">
+                <h3 className="text-xl font-semibold">
                   Special Offer of The Day
                 </h3>
                 <p className="text-sm">
@@ -74,13 +27,13 @@ const Page = () => {
                 </p>
               </div>
 
-              <Link href="/" className="text-sm flex flex-col gap-4 group ">
+              <Link href="/" className="group flex flex-col gap-4 text-sm ">
                 <Image
                   src="/tv.png"
                   alt=""
                   width={500}
                   height={500}
-                  className="w-full object-cover h-full object-center group-hover:scale-110 transition-all"
+                  className="h-full w-full object-cover object-center transition-all group-hover:scale-110"
                 />
                 <span>65&apos;&apos; UHD 4K Smart TV</span>
               </Link>
@@ -90,8 +43,8 @@ const Page = () => {
           </article>
 
           <aside className="col-span-2">
-            <div className="w-full h-full flex flex-col gap-4">
-              <div className="flex justify-between items-center">
+            <div className="flex h-full w-full flex-col gap-4">
+              <div className="flex items-center justify-between">
                 <h3 className="font-semibold">Campaigns</h3>
                 <button className="text-sm">Check all &rarr;</button>
               </div>
@@ -99,14 +52,14 @@ const Page = () => {
               <div className="flex-1">
                 <Link
                   href="/"
-                  className="relative flex w-full min-h-[350px] h-full rounded-md bg-cover bg-center overflow-hidden group p-6 text-white"
+                  className="group relative flex h-full min-h-[350px] w-full overflow-hidden rounded-md bg-cover bg-center p-6 text-white"
                 >
                   <Image
                     alt=""
                     src="https://images.unsplash.com/photo-1614149162883-504ce4d13909?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                     width={500}
                     height={500}
-                    className="inset-0 absolute h-full object-cover object-center group-hover:scale-110 transition-all"
+                    className="absolute inset-0 h-full object-cover object-center transition-all group-hover:scale-110"
                   />
 
                   <div className="relative z-10">
@@ -119,32 +72,32 @@ const Page = () => {
           </aside>
 
           <section className="col-span-10 flex flex-col gap-4">
-            <div className="flex justify-between items-center">
-              <h3 className="font-medium text-lg">Deals of The Day</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-medium">Deals of The Day</h3>
               <p className="text-sm text-gray-600">
                 Sale up to 30% off on selected items.
               </p>
             </div>
 
-            <div className="grid grid-cols-5 h-full gap-4">
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+            <div className="grid h-full grid-cols-5 gap-4">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/ipad.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/ipad-back.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -187,43 +140,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/gaming-laptop.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/gaming-laptop.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -266,43 +219,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/geek-kit.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/geek-kit.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -345,43 +298,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/headphones.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/headphones.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -424,43 +377,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/iwatch.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/iwatch.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -503,20 +456,20 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
@@ -525,7 +478,7 @@ const Page = () => {
           </section>
 
           <div
-            className="col-span-12 rounded-md bg-cover h-24 bg-center p-6 flex items-center justify-between text-white bg-fixed"
+            className="col-span-12 flex h-24 items-center justify-between rounded-md bg-cover bg-fixed bg-center p-6 text-white"
             style={{
               backgroundImage:
                 "url('https://images.unsplash.com/photo-1663691679737-d284e13f1aa2?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
@@ -547,173 +500,173 @@ const Page = () => {
             <div className="grid grid-cols-9 gap-4">
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/gaming-laptop.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Gaming Laptops</p>
+                  <p className="text-sm font-medium">Gaming Laptops</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/geek-kit.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Geek kit</p>
+                  <p className="text-sm font-medium">Geek kit</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/funko.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Figures</p>
+                  <p className="text-sm font-medium">Figures</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/ipad.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Ipads</p>
+                  <p className="text-sm font-medium">Ipads</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/iwatch.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">IWatch</p>
+                  <p className="text-sm font-medium">IWatch</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/earbuds.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Accessories</p>
+                  <p className="text-sm font-medium">Accessories</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/headphones.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Headphones</p>
+                  <p className="text-sm font-medium">Headphones</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/pc.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Laptops</p>
+                  <p className="text-sm font-medium">Laptops</p>
                 </div>
               </Link>
 
               <Link
                 href="/"
-                className="flex flex-col justify-center items-center group"
+                className="group flex flex-col items-center justify-center"
               >
-                <div className="w-full aspect-square p-4 border-2 rounded-t-md group-hover:border-primary">
+                <div className="aspect-square w-full rounded-t-md border-2 p-4 group-hover:border-primary">
                   <Image
                     src="/tv.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full object-contain object-center h-full"
+                    className="h-full w-full object-contain object-center"
                   />
                 </div>
                 <div className="p-3">
-                  <p className="font-medium text-sm">Tv & Monitors</p>
+                  <p className="text-sm font-medium">Tv & Monitors</p>
                 </div>
               </Link>
             </div>
           </section>
 
           <section className="col-span-12 flex gap-6">
-            <div className="flex-1 flex gap-6 bg-white shadow-md p-6 rounded-md">
-              <div className="w-1/2 aspect-[4/3] p-6 bg-gradient-to-tr from-[#fe8a39] to-[#fd3838] rounded-md shadow-[#fd3838] shadow-2xl">
+            <div className="flex flex-1 gap-6 rounded-md bg-white p-6 shadow-md">
+              <div className="aspect-[4/3] w-1/2 rounded-md bg-gradient-to-tr from-[#fe8a39] to-[#fd3838] p-6 shadow-2xl shadow-[#fd3838]">
                 <Image
-                  className="w-full h-full object-contain object-center"
+                  className="h-full w-full object-contain object-center"
                   src="/iwatch.png"
                   width={500}
                   height={500}
@@ -723,15 +676,15 @@ const Page = () => {
 
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-1">
-                  <h3 className="font-semibold text-xl">13-inch MacBook Air</h3>
-                  <p className="text-lg flex gap-2 text-red-500">
-                    <span className="line-through font-medium">$1,450.99</span>
+                  <h3 className="text-xl font-semibold">13-inch MacBook Air</h3>
+                  <p className="flex gap-2 text-lg text-red-500">
+                    <span className="font-medium line-through">$1,450.99</span>
                     <span>$1,050.99</span>
                   </p>
                   <p className="text-sm">In Stock: 63</p>
                 </div>
 
-                <ul className="text-xs flex flex-col gap-3">
+                <ul className="flex flex-col gap-3 text-xs">
                   <li className="flex items-center gap-2">
                     <FaCheck className="flex-shrink-0 text-green-600" />
                     Access smart tv apps without your PC or laptop
@@ -748,16 +701,16 @@ const Page = () => {
                   </li>
                 </ul>
 
-                <button className="btn text-white normal-case bg-gradient-to-tr from-[#fe8a39] to-[#fd3838]">
+                <button className="btn bg-gradient-to-tr from-[#fe8a39] to-[#fd3838] normal-case text-white">
                   Add To Cart
                 </button>
               </div>
             </div>
 
-            <div className="flex-1 flex gap-6 bg-white shadow-md p-6 rounded-md">
-              <div className="w-1/2 aspect-[4/3] p-6 bg-gradient-to-tr from-[#fe8a39] to-[#fd3838] rounded-md shadow-[#fd3838] shadow-2xl">
+            <div className="flex flex-1 gap-6 rounded-md bg-white p-6 shadow-md">
+              <div className="aspect-[4/3] w-1/2 rounded-md bg-gradient-to-tr from-[#fe8a39] to-[#fd3838] p-6 shadow-2xl shadow-[#fd3838]">
                 <Image
-                  className="w-full h-full object-contain object-center"
+                  className="h-full w-full object-contain object-center"
                   src="/gaming-laptop.png"
                   width={500}
                   height={500}
@@ -767,15 +720,15 @@ const Page = () => {
 
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-1">
-                  <h3 className="font-semibold text-xl">13-inch MacBook Air</h3>
-                  <p className="text-lg flex gap-2 text-red-500">
-                    <span className="line-through font-medium">$1,450.99</span>
+                  <h3 className="text-xl font-semibold">13-inch MacBook Air</h3>
+                  <p className="flex gap-2 text-lg text-red-500">
+                    <span className="font-medium line-through">$1,450.99</span>
                     <span>$1,050.99</span>
                   </p>
                   <p className="text-sm">In Stock: 63</p>
                 </div>
 
-                <ul className="text-xs flex flex-col gap-3">
+                <ul className="flex flex-col gap-3 text-xs">
                   <li className="flex items-center gap-2">
                     <FaCheck className="flex-shrink-0 text-green-600" />
                     Access smart tv apps without your PC or laptop
@@ -792,7 +745,7 @@ const Page = () => {
                   </li>
                 </ul>
 
-                <button className="btn text-white normal-case bg-gradient-to-tr from-[#fe8a39] to-[#fd3838]">
+                <button className="btn bg-gradient-to-tr from-[#fe8a39] to-[#fd3838] normal-case text-white">
                   Add To Cart
                 </button>
               </div>
@@ -800,25 +753,25 @@ const Page = () => {
           </section>
 
           <section className="col-span-12">
-            <div className="grid grid-cols-6 h-full gap-4">
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+            <div className="grid h-full grid-cols-6 gap-4">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/tv.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/tv.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -865,43 +818,43 @@ const Page = () => {
 
                 <hr className="my-2" />
 
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/ipad.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/ipad-back.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -944,43 +897,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/gaming-laptop.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/gaming-laptop.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -1023,43 +976,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/geek-kit.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/geek-kit.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -1102,43 +1055,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/headphones.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/headphones.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -1181,43 +1134,43 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col justify-between border p-4 rounded-md">
+              <div className="flex flex-col justify-between rounded-md border p-4">
                 <Link
                   href="/home"
-                  className="flex group w-full aspect-[4/3] overflow-hidden"
+                  className="group flex aspect-[4/3] w-full overflow-hidden"
                 >
                   <Image
                     src="/iwatch.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center flex group-hover:hidden"
+                    className="flex h-full w-full object-contain object-center group-hover:hidden"
                   />
                   <Image
                     src="/iwatch.png"
                     alt=""
                     width={500}
                     height={500}
-                    className="w-full h-full object-contain object-center hidden group-hover:flex"
+                    className="hidden h-full w-full object-contain object-center group-hover:flex"
                   />
                 </Link>
 
@@ -1260,20 +1213,20 @@ const Page = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between items-center border-t pt-4">
+                <div className="flex items-center justify-between border-t pt-4">
                   <div className="flex items-center justify-center gap-2">
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaHeart />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaEye />
                     </button>
-                    <button className="btn btn-sm btn-circle btn-outline">
+                    <button className="btn btn-circle btn-outline btn-sm">
                       <FaSync />
                     </button>
                   </div>
 
-                  <button className="btn btn-sm btn-circle btn-primary">
+                  <button className="btn btn-circle btn-primary btn-sm">
                     <FaShoppingBag />
                   </button>
                 </div>

@@ -1,8 +1,7 @@
+import Footer from "@/components/footer";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} flex w-full min-h-screen flex-col bg-gray-50 gap-6`}
+        className={`${poppins.className} flex min-h-screen w-full flex-col bg-gray-50`}
       >
         <Header />
         {children}

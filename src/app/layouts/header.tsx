@@ -1,14 +1,11 @@
+import config from "@/utils/config.json";
 import Link from "next/link";
 import { AiFillCaretDown } from "react-icons/ai";
 import {
   FaFacebookF,
   FaHeart,
-  FaHome,
-  FaInfo,
   FaInfoCircle,
   FaInstagram,
-  FaPhone,
-  FaQuestion,
   FaSearch,
   FaShoppingBag,
   FaTwitter,
@@ -18,20 +15,20 @@ import {
 const Header = () => {
   return (
     <header>
-      <section className="p-2 border-b">
-        <div className="flex justify-between items-center container">
+      <section className="border-b p-3">
+        <div className="container flex items-center justify-between">
           <div className="flex gap-4">
             <div className="dropdown dropdown-hover">
               <label
                 tabIndex={0}
-                className="cursor-pointer text-sm flex items-center justify-center gap-2"
+                className="flex cursor-pointer items-center justify-center gap-2 text-sm"
               >
                 Languages
                 <AiFillCaretDown />
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu menu-sm p-2 shadow bg-base-100 rounded-sm w-52"
+                className="menu dropdown-content menu-sm z-[1] w-52 rounded-sm bg-base-100 p-2 shadow"
               >
                 <li>
                   <a>English</a>
@@ -42,17 +39,17 @@ const Header = () => {
               </ul>
             </div>
 
-            <div className="dropdown dropdown-hover">
+            <div className="dropdown-hover dropdown">
               <label
                 tabIndex={0}
-                className="cursor-pointer text-sm flex items-center justify-center gap-2"
+                className="flex cursor-pointer items-center justify-center gap-2 text-sm"
               >
                 Country
                 <AiFillCaretDown />
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu menu-sm p-2 shadow bg-base-100 rounded-sm w-52"
+                className="menu dropdown-content menu-sm z-[1] w-52 rounded-sm bg-base-100 p-2 shadow"
               >
                 <li>
                   <a>Turkey (TL)</a>
@@ -63,17 +60,17 @@ const Header = () => {
               </ul>
             </div>
 
-            <div className="dropdown dropdown-hover">
+            <div className="dropdown-hover dropdown">
               <label
                 tabIndex={0}
-                className="cursor-pointer text-sm flex items-center justify-center gap-2"
+                className="flex cursor-pointer items-center justify-center gap-2 text-sm"
               >
                 Quick help
                 <AiFillCaretDown />
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu menu-sm p-2 shadow bg-base-100 rounded-sm w-52"
+                className="menu dropdown-content menu-sm z-[1] w-52 rounded-sm bg-base-100 p-2 shadow"
               >
                 <li>
                   <a>Order tracking</a>
@@ -91,12 +88,12 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="max-w-sm">
-            <div className="alert bg-blue-500 text-white p-2 gap-2 rounded-md text-sm">
+          {/* <div className="max-w-sm">
+            <div className="alert gap-2 rounded-md bg-blue-500 p-2 text-sm text-white">
               <FaInfoCircle />
               <span>FREE SHIPPING FOR ALL ORDERS OF $340</span>
             </div>
-          </div>
+          </div> */}
 
           <ul className="flex items-center justify-center gap-3">
             <li>
@@ -119,12 +116,12 @@ const Header = () => {
       </section>
 
       <section className="p-2">
-        <div className="flex justify-between items-center container">
-          <Link href="/" className="font-bold text-xl">
-            TechSuits
+        <div className="container flex items-center justify-between">
+          <Link href="/" className="text-xl font-bold">
+            {config.title}
           </Link>
 
-          <div className="flex w-full gap-2 max-w-2xl">
+          <div className="flex w-full max-w-2xl gap-2">
             <input
               type="text"
               placeholder="Search for product"
@@ -157,23 +154,17 @@ const Header = () => {
         </div>
       </section>
 
-      <ul className="flex gap-6 p-4 text-sm justify-center items-center bg-blue-600 text-white">
-        <Link href="/home" className="flex items-center justify-center gap-2">
-          <FaHome />
-          Home
-        </Link>
-        <Link href="/home" className="flex items-center justify-center gap-2">
-          <FaInfo />
-          About Us
-        </Link>
-        <Link href="/home" className="flex items-center justify-center gap-2">
-          <FaPhone />
-          Contact
-        </Link>
-        <Link href="/home" className="flex items-center justify-center gap-2">
-          <FaQuestion />
-          FAQ
-        </Link>
+      <ul className="flex items-center justify-center gap-6 bg-blue-600 p-4 text-sm text-white">
+        {config.navigation.map((navLink) => (
+          <Link
+            key={navLink.id}
+            href={navLink.href}
+            className="flex items-center justify-center gap-2"
+          >
+            {/* <FaHome /> */}
+            {navLink.label}
+          </Link>
+        ))}
       </ul>
     </header>
   );

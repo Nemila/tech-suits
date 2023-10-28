@@ -8,6 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import Header from "./layouts/header";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -27,11 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.className} flex w-full min-h-screen flex-col`}
+        className={`${poppins.className} flex w-full min-h-screen flex-col bg-gray-50 gap-6`}
       >
-        {/* <Navbar /> */}
+        <Header />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
